@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todolist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!--Style-->
+    <style>
+        /* 반응형 */
+        @media only screen and (max-width:767px) {
+            body {
+                width: 100%;
+                height: auto;
+            }
+            .memo_container {
+                width: 90%;
+            }
+        }
+
+        body {
+            position: relative;
+            background-image: url("backimg.jpg");
+            background-repeat: repeat;
+            
+        }
+
+        .logo {
+            font-weight: bold;
+            font-display: swap;
+            color: #d3d3d3;
+            font-size: 77px;
+            font-family: 'Bebas Neue', cursive, 'Lato', sans-serif; 
+            margin: 20px 30px;
+        }
+
+        .memo_container {
+            border: 2px solid black;
+            background-color: white;
+            width: 930px;
+            height: 525px;
+            position: absolute;
+            top: 88px;
+            left: 212px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            margin: 20px;
+        }
+
+        .memo_container_deco {
+            border-bottom: 1px solid black;
+            overflow: hidden;
+            height: 40px;
+        }
+
+        .red_circle {
+            float: right;
+            width: 20px;
+            height: 20px;
+            border: 0.5px solid black;
+            border-radius: 50%;
+            background-color: red;
+            margin-top: 10px;
+            margin-right: 65px;
+        }
+
+        .orange_circle {
+            float: right;
+            width: 20px;
+            height: 20px;
+            border: 0.5px solid black;
+            border-radius: 50%;
+            background-color: #ee882e;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+
+        .green_circle {
+            float: right;
+            width: 20px;
+            height: 20px;
+            border: 0.5px solid black;
+            border-radius: 50%;
+            background-color: #7fd744;
+            margin-top: 10px;
+            margin-right: 20px;
+        }
+        .memo_list_btn {
+            overflow: hidden;
+            margin: 10px auto;
+            display:table;
+        }
+        .memo_list {
+            float: left;
+            width: 680px;
+            height: 50px;
+            display: block;
+            font-size: 25px;
+            border-radius: 10px;
+            padding-left: 15px;
+            margin: 13px;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+            .memo_list:hover {
+                border-color: whitesmoke;
+            }
+        
+        .delete_btn {
+            margin:20px 10px;
+            height: 52px;
+            line-height: 32px;
+            font-family: 'Bebas Neue', cursive,'Lato', sans-serif;
+            font-display: swap;
+            font-size: 25px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .complete_btn {
+            margin: 20px;
+            height: 52px;
+            line-height:32px;
+            font-family: 'Bebas Neue', cursive,'Lato', sans-serif;
+            font-display: swap;
+            font-size: 25px;
+            float: right;
+            cursor: pointer;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .darkmode_btn {
+            display: block;
+            position: absolute;
+            top: 550px;
+            left: 779px;
+            font-size: 20px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-display: swap;
+            padding: 10px 30px;
+            cursor:pointer;
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
+    <!--favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="3827992_business_management_todolist_icon.ico" />
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">TO DO LIST</h1>
+    </header>
+    <div class="memo_container">
+        <div class="memo_container_deco">
+            <div class="red_circle"></div> <div class="orange_circle"></div><div class="green_circle"></div>
+        </div>
+        <div class="memo_list_btn">
+            <input class="memo_list" id="memo_input1" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요" />
+            <button class="delete_btn" onclick="localStorage.removeItem('memo_input1');memo_input1.value=''">DELETE</button>
+            <button class="complete_btn" id="complete" onclick="complete1();">DONE</button>
+            <input class="memo_list" id="memo_input2" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
+            <button class="delete_btn" onclick="localStorage.removeItem('memo_input2');memo_input2.value=''">DELETE</button>
+            <button class="complete_btn" id="complete" onclick="complete2();">DONE</button>
+            <input class="memo_list" id="memo_input3" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
+            <button class="delete_btn" onclick="localStorage.removeItem('memo_input3');memo_input3.value=''">DELETE</button>
+            <button class="complete_btn" id="complete" onclick="complete3();">DONE</button>
+            <input class="memo_list" id="memo_input4" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
+            <button class="delete_btn" onclick="localStorage.removeItem('memo_input4');memo_input4.value=''">DELETE</button>
+            <button class="complete_btn" id="complete" onclick="complete4();">DONE</button>
+            <input class="memo_list" id="memo_input5" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
+            <button class="delete_btn" onclick="localStorage.removeItem('memo_input5');memo_input5.value=''">DELETE</button>
+            <button class="complete_btn" id="complete" onclick="complete5();">DONE</button>
+        </div>
+
+        <button class="darkmode_btn" type="button">다크 모드</button>
+        
+
+
+    </div>
+
+    <!--Script-->
+    <script>
+
+        /*오늘 날짜표시*/
+
+        var today = new Date();
+        document.write("today\t" +today.toLocaleString());
+
+        /* 메모 로컬스토리지 저장 */
+        memo_input1.value = localStorage.getItem('memo_input1');
+        memo_input1.oninput = () => {
+            localStorage.setItem('memo_input1', memo_input1.value)
+        };
+        memo_input2.value = localStorage.getItem('memo_input2');
+        memo_input2.oninput = () => {
+            localStorage.setItem('memo_input2', memo_input2.value)
+        };
+        memo_input3.value = localStorage.getItem('memo_input3');
+        memo_input3.oninput = () => {
+            localStorage.setItem('memo_input3', memo_input3.value)
+        };
+        memo_input4.value = localStorage.getItem('memo_input4');
+        memo_input4.oninput = () => {
+            localStorage.setItem('memo_input4', memo_input4.value)
+        };
+        memo_input5.value = localStorage.getItem('memo_input5');
+        memo_input5.oninput = () => {
+            localStorage.setItem('memo_input5', memo_input5.value)
+        };
+        /* 메모입력했을 때 메모저장했다고 알려주는 창 띄우기 */
+        var memo1_save = document.getElementById("memo_input1");
+        memo1_save.addEventListener("keypress", function (key) {
+            if (key.key == 'Enter') {
+                alert("할일이 입력되었습니다.");
+            }
+        });
+        var memo2_save = document.getElementById("memo_input2");
+        memo2_save.addEventListener("keypress", function (key) {
+            if (key.key == 'Enter') {
+                alert("할일이 입력되었습니다.");
+            }
+        });
+        var memo3_save = document.getElementById("memo_input3");
+        memo3_save.addEventListener("keypress", function (key) {
+            if (key.key == 'Enter') {
+                alert("할일이 입력되었습니다.");
+            }
+        });
+        var memo4_save = document.getElementById("memo_input4");
+        memo4_save.addEventListener("keypress", function (key) {
+            if (key.key == 'Enter') {
+                alert("할일이 입력되었습니다.");
+            }
+        });
+        var memo5_save = document.getElementById("memo_input5");
+        memo5_save.addEventListener("keypress", function (key) {
+            if (key.key == 'Enter') {
+                alert("할일이 입력되었습니다.");
+            }
+        });
+        function complete1() {
+            var comp1 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            if (comp1) {
+                document.getElementById("memo_input1").style.backgroundColor = "#F5DF4D";
+            }
+        };
+        function complete2() {
+            var comp2 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            if (comp2) {
+                document.getElementById("memo_input2").style.backgroundColor = "#F5DF4D";
+            }
+        };
+        function complete3() {
+            var comp3 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            if (comp3) {
+                document.getElementById("memo_input3").style.backgroundColor = "#F5DF4D";
+            }
+        };
+        function complete4() {
+            var comp4 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            if (comp4) {
+                document.getElementById("memo_input4").style.backgroundColor = "#F5DF4D";
+            }
+        };
+        function complete5() {
+            var comp5 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            if (comp5) {
+                document.getElementById("memo_input5").style.backgroundColor = "#F5DF4D";
+            }
+        };
+        
+
+       /*darkmode*/
+
+        document.querySelector(".darkmode_btn").addEventListener("click", function () {
+            document.querySelector(".memo_container").style.backgroundColor = "black";
+            var memo_lists = document.getElementsByClassName("memo_list");
+            for (var i = 0; i < memo_lists.length; i++) {
+                var memo_list = memo_lists.item(i);
+                memo_list.style.backgroundColor = "black";
+                memo_list.style.color = "white";
+            }
+        });
+       
+    </script>
+</body>
+
+</html>
