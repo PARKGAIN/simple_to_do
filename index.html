@@ -180,7 +180,7 @@
 
         /*오늘 날짜표시*/
 
-        var today = new Date();
+        const today = new Date();
         document.write("today\t" +today.toLocaleString());
 
         /* 메모 로컬스토리지 저장 */
@@ -205,62 +205,62 @@
             localStorage.setItem('memo_input5', memo_input5.value)
         };
         /* 메모입력했을 때 메모저장했다고 알려주는 창 띄우기 */
-        var memo1_save = document.getElementById("memo_input1");
+        const memo1_save = document.getElementById("memo_input1");
         memo1_save.addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        var memo2_save = document.getElementById("memo_input2");
+        const memo2_save = document.getElementById("memo_input2");
         memo2_save.addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        var memo3_save = document.getElementById("memo_input3");
+        const memo3_save = document.getElementById("memo_input3");
         memo3_save.addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        var memo4_save = document.getElementById("memo_input4");
+        const memo4_save = document.getElementById("memo_input4");
         memo4_save.addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        var memo5_save = document.getElementById("memo_input5");
+        const memo5_save = document.getElementById("memo_input5");
         memo5_save.addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
         function complete1() {
-            var comp1 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            const comp1 = confirm("짝짝짝! 할 일을 완료하였습니까?");
             if (comp1) {
                 document.getElementById("memo_input1").style.backgroundColor = "#F5DF4D";
             }
         };
         function complete2() {
-            var comp2 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            const comp2 = confirm("짝짝짝! 할 일을 완료하였습니까?");
             if (comp2) {
                 document.getElementById("memo_input2").style.backgroundColor = "#F5DF4D";
             }
         };
         function complete3() {
-            var comp3 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            const comp3 = confirm("짝짝짝! 할 일을 완료하였습니까?");
             if (comp3) {
                 document.getElementById("memo_input3").style.backgroundColor = "#F5DF4D";
             }
         };
         function complete4() {
-            var comp4 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            const comp4 = confirm("짝짝짝! 할 일을 완료하였습니까?");
             if (comp4) {
                 document.getElementById("memo_input4").style.backgroundColor = "#F5DF4D";
             }
         };
         function complete5() {
-            var comp5 = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            const comp5 = confirm("짝짝짝! 할 일을 완료하였습니까?");
             if (comp5) {
                 document.getElementById("memo_input5").style.backgroundColor = "#F5DF4D";
             }
@@ -271,9 +271,9 @@
 
         document.querySelector(".darkmode_btn").addEventListener("click", function () {
             document.querySelector(".memo_container").style.backgroundColor = "black";
-            var memo_lists = document.getElementsByClassName("memo_list");
-            for (var i = 0; i < memo_lists.length; i++) {
-                var memo_list = memo_lists.item(i);
+            const memo_lists = document.getElementsByClassName("memo_list");
+            for (let i = 0; i < memo_lists.length; i++) {
+                let memo_list = memo_lists.item(i);
                 memo_list.style.backgroundColor = "black";
                 memo_list.style.color = "white";
             }
