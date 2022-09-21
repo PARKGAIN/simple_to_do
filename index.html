@@ -181,7 +181,7 @@
         /*오늘 날짜표시*/
 
         const today = new Date();
-        document.write("today\t" +today.toLocaleString());
+        document.write("today\t" +new Intl.DateTimeFormat('kr').format(today));
 
         /* 메모 로컬스토리지 저장 */
         memo_input1.value = localStorage.getItem('memo_input1');
