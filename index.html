@@ -204,37 +204,40 @@
         memo_input5.oninput = () => {
             localStorage.setItem('memo_input5', memo_input5.value)
         };
+        
         /* 메모입력했을 때 메모저장했다고 알려주는 창 띄우기 */
-        const memo1_save = document.getElementById("memo_input1");
-        memo1_save.addEventListener("keypress", function (key) {
+        const memo_save = [ document.getElementById("memo_input1"),document.getElementById("memo_input2"),document.getElementById("memo_input3"),document.getElementById("memo_input4"),document.getElementById("memo_input5")];
+        
+        memo_save[0].addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        const memo2_save = document.getElementById("memo_input2");
-        memo2_save.addEventListener("keypress", function (key) {
+  
+        memo_save[1].addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        const memo3_save = document.getElementById("memo_input3");
-        memo3_save.addEventListener("keypress", function (key) {
+        
+        memo_save[2].addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        const memo4_save = document.getElementById("memo_input4");
-        memo4_save.addEventListener("keypress", function (key) {
+       
+        memo_save[3].addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
-        const memo5_save = document.getElementById("memo_input5");
-        memo5_save.addEventListener("keypress", function (key) {
+        
+        memo_save[4].addEventListener("keypress", function (key) {
             if (key.key == 'Enter') {
                 alert("할일이 입력되었습니다.");
             }
         });
+
         function complete1() {
             const comp1 = confirm("짝짝짝! 할 일을 완료하였습니까?");
             if (comp1) {
