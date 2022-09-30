@@ -154,16 +154,16 @@
         <div class="memo_list_btn">
             <input class="memo_list" id="memo_input1" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요" />
             <button class="delete_btn" onclick="localStorage.removeItem('memo_input1');memo_input1.value=''">DELETE</button>
-            <button class="complete_btn" id="complete" onclick="complete1();">DONE</button>
+            <button class="complete_btn" id="complete" onclick="complete();">DONE</button>
             <input class="memo_list" id="memo_input2" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
             <button class="delete_btn" onclick="localStorage.removeItem('memo_input2');memo_input2.value=''">DELETE</button>
-            <button class="complete_btn" id="complete" onclick="complete2();">DONE</button>
+            <button class="complete_btn" id="complete" onclick="complete();">DONE</button>
             <input class="memo_list" id="memo_input3" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
             <button class="delete_btn" onclick="localStorage.removeItem('memo_input3');memo_input3.value=''">DELETE</button>
-            <button class="complete_btn" id="complete" onclick="complete3();">DONE</button>
+            <button class="complete_btn" id="complete" onclick="complete();">DONE</button>
             <input class="memo_list" id="memo_input4" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
             <button class="delete_btn" onclick="localStorage.removeItem('memo_input4');memo_input4.value=''">DELETE</button>
-            <button class="complete_btn" id="complete" onclick="complete4();">DONE</button>
+            <button class="complete_btn" id="complete" onclick="complete();">DONE</button>
             <input class="memo_list" id="memo_input5" type="text" placeholder="할 일을 입력하고 Enter를 눌러주세요">
             <button class="delete_btn" onclick="localStorage.removeItem('memo_input5');memo_input5.value=''">DELETE</button>
             <button class="complete_btn" id="complete" onclick="complete5();">DONE</button>
@@ -238,36 +238,16 @@
             }
         });
 
-        function complete1() {
-            const comp1 = confirm("짝짝짝! 할 일을 완료하였습니까?");
-            if (comp1) {
-                document.getElementById("memo_input1").style.backgroundColor = "#F5DF4D";
+        
+        
+        function complete() {
+            const comp = confirm("짝짝짝! 할 일을 완료하였습니까?");
+            if(comp){
+                document.getElementsByClassName("memo_list").style.backgroundColor = "#F5DF4D";
             }
         };
-        function complete2() {
-            const comp2 = confirm("짝짝짝! 할 일을 완료하였습니까?");
-            if (comp2) {
-                document.getElementById("memo_input2").style.backgroundColor = "#F5DF4D";
-            }
-        };
-        function complete3() {
-            const comp3 = confirm("짝짝짝! 할 일을 완료하였습니까?");
-            if (comp3) {
-                document.getElementById("memo_input3").style.backgroundColor = "#F5DF4D";
-            }
-        };
-        function complete4() {
-            const comp4 = confirm("짝짝짝! 할 일을 완료하였습니까?");
-            if (comp4) {
-                document.getElementById("memo_input4").style.backgroundColor = "#F5DF4D";
-            }
-        };
-        function complete5() {
-            const comp5 = confirm("짝짝짝! 할 일을 완료하였습니까?");
-            if (comp5) {
-                document.getElementById("memo_input5").style.backgroundColor = "#F5DF4D";
-            }
-        };
+        
+    
         
 
        /*darkmode*/
@@ -286,3 +266,4 @@
 </body>
 
 </html>
+
