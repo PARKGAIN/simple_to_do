@@ -2,7 +2,7 @@
 
 
 ## result
-<a href="https://parkgain.github.io/my-first-web-site/">웹사이트보러가기</a>
+<a href="https://parkgain.github.io/simple_to_do/">웹사이트보러가기</a>
 
 <img src="./todolist.jpg" title="이미지예시" width="360px" height="300px" />
 
